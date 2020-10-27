@@ -1,0 +1,22 @@
+1. Product owner
+-How does their feature improves/benefit end users journey/experience end-to-end
+-What are the future priorities for this particular system
+
+   UX designer
+-How will they ensure the feature is user friendly and not complex to the end user
+-Is the usabiity and functionality seamless to the the end user
+-Would all these requirements be in a form of a link, button also would they be on the same page or mutliple pages
+-
+
+   Technical architecture
+-What security measures are in place for the feature(if details are encrypted)
+-What is the end-to-end design flow
+-Want to see the high level architecture on how everything will function end-to-end
+-What approch or desing is used to show end-to-end implementation of the feature
+-If the user deletes and want to add their details does the system pick details or you start from scratch
+
+2. I would want it to be as simple to use and easy to navigate to each component
+   Ensure that each component is using a function that is desired for.
+
+3. Adding user to - after adding user i want to see the list of added users and be able to edit any user on the list if i made a mistake and get the updated list.
+   Delete if there are captures eg are you sure you want to delete then done.
