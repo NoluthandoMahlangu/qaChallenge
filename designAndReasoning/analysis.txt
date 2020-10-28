@@ -4,8 +4,8 @@
 
    UX designer
 -How will they ensure the feature is user friendly and not complex to the end user
--Is the usabiity and functionality seamless to the the end user
--Would all these requirements be in a form of a link, button also would they be on the same page or mutliple pages
+-Is the usability and functionality seamless to the the end user
+-Would all these requirements be in a form of a link, button also would they be on the same page or multiple pages
 
 
    Technical architecture

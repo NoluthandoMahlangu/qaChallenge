@@ -9,13 +9,11 @@ import org.junit.runner.RunWith;
 @RunWith(Cucumber.class)
 @CucumberOptions(
         features = "src/test/java/features",
-        glue = {"src/test/java/features"},
+        glue = {"StepDefinition"},
         //tags = {"@Regression","@Sanity"},
         format = { "json:target/QAchallenge.json", "pretty",
                 "html:target/QA_CHALLENGE" },
         plugin = {"com.cucumber.listener.ExtentCucumberFormatter:target/cucumber-reports/report.html" }
-         //, monochrome = true,
-        // dryRun = true
 )
 
 public class TestRunner {

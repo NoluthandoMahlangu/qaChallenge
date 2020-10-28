@@ -60,7 +60,7 @@ public class seleniumFunctions {
 
     // Wait For a page to Load.
 
-    public void WaitForLoad(WebDriver driver){
+    /*public void WaitForLoad(WebDriver driver){
         ExpectedCondition<Boolean> pageLoadCondition = new
 
                 ExpectedCondition<Boolean>() {
@@ -70,7 +70,7 @@ public class seleniumFunctions {
                 };
         WebDriverWait wait = new WebDriverWait(driver, 30);
         wait.until(pageLoadCondition);
-    }
+    }*/
 
     /*
      * this sets up the the web driver for testNG multi-platform run takes only the

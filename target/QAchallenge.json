@@ -1,0 +1,161 @@
+[
+  {
+    "line": 1,
+    "elements": [
+      {
+        "line": 9,
+        "name": "Login to the system",
+        "description": "",
+        "id": "checkout-product-functionality;login-to-the-system;;2",
+        "type": "scenario",
+        "keyword": "Scenario Outline",
+        "steps": [
+          {
+            "result": {
+              "duration": 7748937900,
+              "status": "passed"
+            },
+            "line": 4,
+            "name": "the customer is on swagLabs landing page",
+            "match": {
+              "location": "stepDefs.theCustomerIsOnSwagLabsLandingPage()"
+            },
+            "keyword": "Given "
+          },
+          {
+            "result": {
+              "duration": 16347137399,
+              "status": "passed"
+            },
+            "line": 5,
+            "name": "customer provides their details standard_user and secret_sauce and login in",
+            "match": {
+              "arguments": [
+                {
+                  "val": "standard_user",
+                  "offset": 32
+                },
+                {
+                  "val": "secret_sauce",
+                  "offset": 50
+                }
+              ],
+              "location": "stepDefs.customerProvidesTheirDetailsUserNameAndPasswordAndLoginIn(String,String)"
+            },
+            "matchedColumns": [
+              0,
+              1
+            ],
+            "keyword": "Then "
+          }
+        ]
+      },
+      {
+        "line": 21,
+        "name": "Checkout product functionality",
+        "description": "",
+        "id": "checkout-product-functionality;checkout-product-functionality;;2",
+        "type": "scenario",
+        "keyword": "Scenario Outline",
+        "steps": [
+          {
+            "result": {
+              "duration": 96179000,
+              "status": "passed"
+            },
+            "line": 12,
+            "name": "a customer add two products to your shopping cart",
+            "match": {
+              "location": "stepDefs.a_customer_add_two_products_to_your_shopping_cart()"
+            },
+            "keyword": "Given "
+          },
+          {
+            "result": {
+              "duration": 1020276200,
+              "status": "passed"
+            },
+            "line": 13,
+            "name": "a customer confirm that the correct products are added to the cart",
+            "match": {
+              "location": "stepDefs.aCustomerConfirmThatTheCorrectProductsAreAddedToTheCart()"
+            },
+            "keyword": "Then "
+          },
+          {
+            "result": {
+              "duration": 601360401,
+              "status": "passed"
+            },
+            "line": 14,
+            "name": "a customer add the personal information Nothando Mahlangu and 1680",
+            "match": {
+              "arguments": [
+                {
+                  "val": "Nothando",
+                  "offset": 40
+                },
+                {
+                  "val": "Mahlangu",
+                  "offset": 49
+                },
+                {
+                  "val": "1680",
+                  "offset": 62
+                }
+              ],
+              "location": "stepDefs.aCustomerAddThePersonalInformationFirstnameLastnameAndPostalcode(String,String,String)"
+            },
+            "matchedColumns": [
+              0,
+              1,
+              2
+            ],
+            "keyword": "And "
+          },
+          {
+            "result": {
+              "duration": 2403117800,
+              "status": "passed"
+            },
+            "line": 15,
+            "name": "on the Checkout, the verify screen confirms that the total price is correct the sum of the two products",
+            "match": {
+              "location": "stepDefs.onTheCheckoutTheVerifyScreenConfirmsThatTheTotalPriceIsCorrectTheSumOfTheTwoProducts()"
+            },
+            "keyword": "Then "
+          },
+          {
+            "result": {
+              "duration": 370549100,
+              "status": "passed"
+            },
+            "line": 16,
+            "name": "a customer finishes an order",
+            "match": {
+              "location": "stepDefs.aCustomerFinishesAnOrder()"
+            },
+            "keyword": "Then "
+          },
+          {
+            "result": {
+              "duration": 2416144800,
+              "status": "passed"
+            },
+            "line": 17,
+            "name": "confirm that the order confirmation screen is displayed",
+            "match": {
+              "location": "stepDefs.confirm_that_the_order_confirmation_screen_is_displayed()"
+            },
+            "keyword": "Then "
+          }
+        ]
+      }
+    ],
+    "name": "Checkout product functionality",
+    "description": "",
+    "id": "checkout-product-functionality",
+    "keyword": "Feature",
+    "uri": "checkOutFunctionality.feature"
+  }
+]

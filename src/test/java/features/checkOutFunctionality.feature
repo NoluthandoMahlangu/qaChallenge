@@ -2,7 +2,7 @@ Feature: Checkout product functionality
 
   Scenario Outline: Login to the system
     Given the customer is on swagLabs landing page
-    Then Customer provides their details <userName> and <password> and login in
+    Then customer provides their details <userName> and <password> and login in
 
     Examples:
       | userName      | password     |

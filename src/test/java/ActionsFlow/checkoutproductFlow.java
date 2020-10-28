@@ -6,11 +6,13 @@ import static org.junit.Assert.*;
 import static org.hamcrest.CoreMatchers.*;
 import org.openqa.selenium.*;
 import org.openqa.selenium.firefox.FirefoxDriver;
+import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.Select;
 import com.relevantcodes.extentreports.ExtentReports;
 import com.relevantcodes.extentreports.ExtentTest;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.support.ui.WebDriverWait;
 import utils.pageObjects;
 import utils.seleniumFunctions;
 import static org.junit.Assert.*;
@@ -30,17 +32,13 @@ public class checkoutproductFlow extends seleniumFunctions {
         driver = setupWebDriver(browser);
         driver.get("https://www.saucedemo.coma");
         driver.manage().window().maximize();
-
-        driver.findElement(By.cssSelector(pageObjects.txt_username)).sendKeys(username);
-        driver.findElement(By.cssSelector(pageObjects.txt_password)).sendKeys(password);
-        driver.findElement(By.xpath(pageObjects.btn_login)).click();
         Thread.sleep(5);
         TakeApplicationScreenShot();
     }
 
-    public static void Logon(String username, String password) throws Throwable{ ;
-        driver.findElement(By.cssSelector(pageObjects.txt_username)).sendKeys(username);
-        driver.findElement(By.cssSelector(pageObjects.txt_password)).sendKeys(password);
+    public static void Logon(String username, String password) throws Throwable{
+        driver.findElement(By.xpath(pageObjects.txt_username)).sendKeys(username);
+        driver.findElement(By.xpath(pageObjects.txt_password)).sendKeys(password);
         driver.findElement(By.xpath(pageObjects.btn_login)).click();
         Thread.sleep(5);
         TakeApplicationScreenShot();
@@ -65,7 +63,15 @@ public class checkoutproductFlow extends seleniumFunctions {
             e.getMessage();
         }
 
-        driver.findElement(By.linkText(pageObjects.btn_checkoutI)).click();
+        try {
+            Thread.sleep(50);
+            driver.findElement(By.cssSelector(pageObjects.btn_checkoutI)).click();
+            driver.findElement(By.linkText(pageObjects.btn_checkoutII)).click();
+        }catch (Exception e){
+            e.getMessage();
+        }
+
+
     }
 
     public static void enterDetails(String name, String lastname, String postalAddress){
@@ -76,19 +82,27 @@ public class checkoutproductFlow extends seleniumFunctions {
 
      }
 
-      public static void assertAndConfirmsOrder() {
+      public static void assertAndConfirmsOrder() throws Throwable {
+          Thread.sleep(2000);
+          JavascriptExecutor jse = (JavascriptExecutor) driver;
+          jse.executeScript("arguments[0].style.border='3px solid red'",driver.findElement(By.xpath(pageObjects.lbl_assertAmount)));
           assertEquals("Total: $41.02", driver.findElement(By.xpath(pageObjects.lbl_assertAmount)).getText());
-          driver.findElement(By.xpath(pageObjects.btn_checkoutII)).click();
 
+          TakeApplicationScreenShot();
       }
 
       public static void finishOrder(){
 
-          driver.findElement(By.xpath(pageObjects.btn_finish)).click();
+          driver.findElement(By.linkText(pageObjects.btn_finish)).click();
 
       }
 
-      public static void finaliseOrder() {
+      public static void finaliseOrder() throws Throwable{
+
+          Thread.sleep(2000);
+          JavascriptExecutor jse = (JavascriptExecutor) driver;
+          jse.executeScript("arguments[0].style.border='3px solid red'",driver.findElement(By.xpath(pageObjects.lbl_assertOrder)));
+          TakeApplicationScreenShot();
           try {
               assertEquals("THANK YOU FOR YOUR ORDER", driver.findElement(By.xpath(pageObjects.lbl_assertOrder)).getText());
           } catch (Error e) {

@@ -17,9 +17,10 @@ public class stepDefs extends checkoutproductFlow {
         TakeApplicationScreenShot();
     }
 
-    @Then("^Customer provides their details (.*) and (.*) and login in$")
-    public void customerProvidesTheirDetailsUserNameAndPasswordAndLoginIn(String username, String password) throws Throwable{
+    @Then("customer provides their details (.*) and (.*) and login in")
+    public static void customerProvidesTheirDetailsUserNameAndPasswordAndLoginIn(String username, String password) throws Throwable{
         checkoutproductFlow.Logon(username,password);
+
     }
 
     @Given("^a customer add two products to your shopping cart$")
@@ -44,7 +45,7 @@ public class stepDefs extends checkoutproductFlow {
     }
 
     @Then("^on the Checkout, the verify screen confirms that the total price is correct the sum of the two products$")
-    public void onTheCheckoutTheVerifyScreenConfirmsThatTheTotalPriceIsCorrectTheSumOfTheTwoProducts() {
+    public void onTheCheckoutTheVerifyScreenConfirmsThatTheTotalPriceIsCorrectTheSumOfTheTwoProducts() throws Throwable{
         checkoutproductFlow.assertAndConfirmsOrder();
     }
 
@@ -57,4 +58,6 @@ public class stepDefs extends checkoutproductFlow {
     @Then("^confirm that the order confirmation screen is displayed$")
     public void confirm_that_the_order_confirmation_screen_is_displayed() throws Throwable {
         checkoutproductFlow.finaliseOrder();    }
+
+
 }
